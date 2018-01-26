@@ -11,5 +11,7 @@
 	<classpathentry kind="var" path="CTRL2018.sources"/>
 	<classpathentry kind="var" path="wpilib.sources"/>
 	<classpathentry kind="var" path="wpiutil.sources"/>
+	<classpathentry kind="var" path="USERLIBS_DIR/CTRE_Phoenix-sources.jar"/>
+	<classpathentry kind="var" path="USERLIBS_DIR/CTRE_Phoenix.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
