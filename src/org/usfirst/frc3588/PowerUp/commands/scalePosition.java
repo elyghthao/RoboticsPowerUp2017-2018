@@ -24,7 +24,7 @@ public class scalePosition extends CommandGroup {
     public scalePosition(String robotPosition, String scalePosition) {
 
     	
-    	
+//random
 //    	if (robotPosition.charAt(0) != scalePosition.charAt(0)) {
 //    		if (scalePosition.charAt(0) == 'L') {
 //    			addSequential (new Pivot(false, 90.0, 0.5));
