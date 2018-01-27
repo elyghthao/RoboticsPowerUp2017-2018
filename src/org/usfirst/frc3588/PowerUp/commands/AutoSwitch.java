@@ -56,5 +56,11 @@ public class AutoSwitch extends CommandGroup {
     		}
     		
     	}
+    	
+    	
+    	
+    	
+    	
+    	
     } 
 }
