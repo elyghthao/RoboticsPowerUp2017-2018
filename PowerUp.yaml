@@ -297,7 +297,7 @@ Children:
         default: 1
         name: Number
         validators: &id010 [Joystick]
-        value: '0'
+        value: '2'
     Base: Joystick
     Name: leftJoystick
   - Children: []
@@ -310,6 +310,16 @@ Children:
         value: '1'
     Base: Joystick
     Name: rightJoystick
+  - Children: []
+    Properties:
+      Number: !!robotbuilder.data.properties.ChoicesProperty
+        choices: *id009
+        default: 1
+        name: Number
+        validators: *id010
+        value: '0'
+    Base: Joystick
+    Name: Controller
   Properties: {}
   Base: OI
   Name: Operator Interface
