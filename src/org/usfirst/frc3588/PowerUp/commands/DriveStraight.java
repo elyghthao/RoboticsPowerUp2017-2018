@@ -47,7 +47,7 @@ public class DriveStraight extends Command {
 	// Called just before this Command runs the first time
 	@Override
 	protected void initialize() throws IllegalArgumentException {
-		if (m_power == 0) {
+		if (m_power == RobotMap.STOP) {
 			throw new IllegalArgumentException("Invalid power value " + Double.toString(m_power));
 		}
 		if (m_time > 0) {
@@ -80,8 +80,8 @@ public class DriveStraight extends Command {
 	// Called once after isFinished returns true
 	@Override
 	protected void end() {
-		RobotMap.chassisleftMotor.set(0);
-		RobotMap.chassisrightMotor.set(0);
+		RobotMap.chassisleftMotor.set(RobotMap.STOP);
+		RobotMap.chassisrightMotor.set(RobotMap.STOP);
 	}
 
 	// Called when another command which requires one or more of the same
