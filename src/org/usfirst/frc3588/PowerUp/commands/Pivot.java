@@ -58,15 +58,15 @@ public class Pivot extends Command {
     // Called repeatedly when this Command is scheduled to run
     @Override
     protected void execute() {
-    	if (m_direction == true) {
-    		RobotMap.chassisrightMotor.set(m_power);
-    		RobotMap.chassisleftMotor.set(-m_power);
-    	}
-    	else  {
-    		RobotMap.chassisrightMotor.set(-m_power);
-    		RobotMap.chassisleftMotor.set(m_power);
-    	}
-    	gyroReading = RobotMap.chassisanalogGyro.getAngle();
+//    	if (m_direction == true) {
+//    		RobotMap.chassisrightMotor.set(m_power);
+//    		RobotMap.chassisleftMotor.set(-m_power);
+//    	}
+//    	else  {
+//    		RobotMap.chassisrightMotor.set(-m_power);
+//    		RobotMap.chassisleftMotor.set(m_power);
+//    	}
+//    	gyroReading = RobotMap.chassisanalogGyro.getAngle();
     }
 
     // Make this return true when this Command no longer needs to run execute()
