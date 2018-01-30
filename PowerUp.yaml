@@ -550,7 +550,6 @@ Children:
         name: Button on SmartDashboard, validators: null, value: true}
     Base: Command
     Name: shoot
-<<<<<<< HEAD
   - Children: []
     Properties:
       Autonomous Selection: !!robotbuilder.data.properties.BooleanProperty {default: false,
@@ -598,8 +597,6 @@ Children:
         name: Button on SmartDashboard, validators: null, value: false}
     Base: Command
     Name: DriveStraight
-=======
->>>>>>> branch 'master' of https://github.com/frc-3588/PowerUp
   Properties: {}
   Base: Commands
   Name: Commands
