@@ -240,7 +240,7 @@ Children:
         validators: null
         value: []
       Default Command: !!robotbuilder.data.properties.TypeSelectionProperty {default: None,
-        name: Default Command, type: Command, validators: null, value: moveElevatorTele}
+        name: Default Command, type: Command, validators: null, value: None}
       Constants: !!robotbuilder.data.properties.ConstantsProperty
         default: []
         name: Constants
@@ -297,7 +297,7 @@ Children:
         default: 1
         name: Number
         validators: &id010 [Joystick]
-        value: '2'
+        value: '0'
     Base: Joystick
     Name: leftJoystick
   - Children: []
@@ -310,16 +310,6 @@ Children:
         value: '1'
     Base: Joystick
     Name: rightJoystick
-  - Children: []
-    Properties:
-      Number: !!robotbuilder.data.properties.ChoicesProperty
-        choices: *id009
-        default: 1
-        name: Number
-        validators: *id010
-        value: '0'
-    Base: Joystick
-    Name: Controller
   Properties: {}
   Base: OI
   Name: Operator Interface
@@ -401,11 +391,7 @@ Children:
         default: []
         name: Parameters
         validators: null
-        value:
-        - !!robotbuilder.data.properties.ParameterDescriptor {name: robotPosition,
-          type: String}
-        - !!robotbuilder.data.properties.ParameterDescriptor {name: scalePosition,
-          type: String}
+        value: []
       Run When Disabled: !!robotbuilder.data.properties.BooleanProperty {default: false,
         name: Run When Disabled, validators: null, value: false}
       Parameter presets: !!robotbuilder.data.properties.ParameterSetProperty
@@ -455,7 +441,7 @@ Children:
         value:
         - !!robotbuilder.data.properties.ParameterDescriptor {name: robotPosition,
           type: String}
-        - !!robotbuilder.data.properties.ParameterDescriptor {name: switchPosition,
+        - !!robotbuilder.data.properties.ParameterDescriptor {name: switchPostion,
           type: String}
       Run When Disabled: !!robotbuilder.data.properties.BooleanProperty {default: false,
         name: Run When Disabled, validators: null, value: false}
@@ -481,11 +467,7 @@ Children:
         default: []
         name: Parameters
         validators: null
-        value:
-        - !!robotbuilder.data.properties.ParameterDescriptor {name: robotPosition,
-          type: String}
-        - !!robotbuilder.data.properties.ParameterDescriptor {name: switchPosition,
-          type: String}
+        value: []
       Run When Disabled: !!robotbuilder.data.properties.BooleanProperty {default: false,
         name: Run When Disabled, validators: null, value: false}
       Parameter presets: !!robotbuilder.data.properties.ParameterSetProperty
@@ -523,7 +505,7 @@ Children:
       Button on SmartDashboard: !!robotbuilder.data.properties.BooleanProperty {default: true,
         name: Button on SmartDashboard, validators: null, value: false}
     Base: Command
-    Name: moveElevatorAuto
+    Name: moveElevator
   - Children: []
     Properties:
       Autonomous Selection: !!robotbuilder.data.properties.BooleanProperty {default: false,
@@ -568,6 +550,7 @@ Children:
         name: Button on SmartDashboard, validators: null, value: true}
     Base: Command
     Name: shoot
+<<<<<<< HEAD
   - Children: []
     Properties:
       Autonomous Selection: !!robotbuilder.data.properties.BooleanProperty {default: false,
@@ -615,6 +598,8 @@ Children:
         name: Button on SmartDashboard, validators: null, value: false}
     Base: Command
     Name: DriveStraight
+=======
+>>>>>>> branch 'master' of https://github.com/frc-3588/PowerUp
   Properties: {}
   Base: Commands
   Name: Commands
