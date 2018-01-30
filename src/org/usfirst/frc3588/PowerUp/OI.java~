@@ -70,11 +70,11 @@ public class OI {
 
         // SmartDashboard Buttons
         SmartDashboard.putData("Autonomous Command", new AutonomousCommand());
-        SmartDashboard.putData("closeArms", new closeArms());
-        SmartDashboard.putData("Pivot", new Pivot());
-        SmartDashboard.putData("drive", new drive());
-        SmartDashboard.putData("AutoSwitch", new AutoSwitch());
-        SmartDashboard.putData("AutoRun", new AutoRun());
+//        SmartDashboard.putData("closeArms", new closeArms());
+//        SmartDashboard.putData("Pivot", new Pivot());
+//        SmartDashboard.putData("drive", new drive());
+//        SmartDashboard.putData("AutoSwitch", new AutoSwitch());
+//        SmartDashboard.putData("AutoRun", new AutoRun());
         SmartDashboard.putData("openArms", new openArms());
         SmartDashboard.putData("shoot", new shoot());
         SmartDashboard.putData("moveElevatorTele", new moveElevatorTele());
