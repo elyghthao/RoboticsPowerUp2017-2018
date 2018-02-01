@@ -52,7 +52,7 @@ public class drive extends Command {
     protected void execute() {
     	RobotMap.chassisleftMotor.set(Robot.oi.rightJoystick.getY());
     	RobotMap.chassisrightMotor.set(Robot.oi.leftJoystick.getY());
-    	distance = RobotMap.chassisUltrasonic1.getRangeInches();
+    	distance = RobotMap.chassisGyro.getAngle();
     	System.out.println(distance);
     }
 

@@ -52,10 +52,12 @@ public class drive extends Command {
     // Called repeatedly when this Command is scheduled to run
     @Override
     protected void execute() {
-    		RobotMap.chassisleftMotor.set(Robot.oi.rightJoystick.getY());
-    		RobotMap.chassisrightMotor.set(Robot.oi.leftJoystick.getY());
-    		distance = RobotMap.chassisUltrasonic1.getRangeInches();
-    		System.out.println(distance);
+
+    		
+    	RobotMap.chassisleftMotor.set(Robot.oi.rightJoystick.getY());
+    	RobotMap.chassisrightMotor.set(Robot.oi.leftJoystick.getY());
+    	distance = RobotMap.chassisGyro.getAngle();
+    	System.out.println(distance);
     }
 
     // Make this return true when this Command no longer needs to run execute()
