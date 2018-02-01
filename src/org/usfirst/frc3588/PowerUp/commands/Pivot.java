@@ -53,30 +53,30 @@ public class Pivot extends Command {
     protected void initialize() {
     	RobotMap.chassisleftMotor.set(RobotMap.STOP);
     	RobotMap.chassisrightMotor.set(RobotMap.STOP);
+    	RobotMap.chassisGyro.reset();
     }
 
     // Called repeatedly when this Command is scheduled to run
     @Override
     protected void execute() {
-//    	if (m_direction == true) {
-//    		RobotMap.chassisrightMotor.set(m_power);
-//    		RobotMap.chassisleftMotor.set(-m_power);
-//    	}
-//    	else  {
-//    		RobotMap.chassisrightMotor.set(-m_power);
-//    		RobotMap.chassisleftMotor.set(m_power);
-//    	}
-//    	gyroReading = RobotMap.chassisanalogGyro.getAngle();
+    	if (m_direction == true) {
+    		RobotMap.chassisrightMotor.set(m_power);
+    		RobotMap.chassisleftMotor.set(-m_power);
+    	}else {
+    		RobotMap.chassisrightMotor.set(-m_power);
+    		RobotMap.chassisleftMotor.set(m_power);
+    	}
+    	System.out.println(RobotMap.chassisGyro.getAngle());
+    	
+    	
     }
 
     // Make this return true when this Command no longer needs to run execute()
     @Override
     protected boolean isFinished() {
-    	if ((gyroReading > m_gyro - GYRO_RANGE) && (gyroReading < m_gyro + GYRO_RANGE)) {
-    		return true;
-    	}else {
-        return false;
-    	}
+    	
+        return (Math.abs(RobotMap.chassisGyro.getAngle()) > Math.abs(m_gyro));
+    	
     }
 
     // Called once after isFinished returns true
