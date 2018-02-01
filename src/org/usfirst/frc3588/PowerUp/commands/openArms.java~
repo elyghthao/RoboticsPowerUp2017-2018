@@ -40,14 +40,14 @@ public class openArms extends Command {
     @Override
     protected void initialize() {
     	check = false;
-    	RobotMap.armshorizontalMotor.set(0.0);
+    	
     	RobotMap.armswheelMotor.set(0.0);
     }
 
     // Called repeatedly when this Command is scheduled to run
     @Override
     protected void execute() {
-    		RobotMap.armshorizontalMotor.set(-1.0);
+    	RobotMap.armswheelMotor.set(-1.0);
     }
 
     // Make this return true when this Command no longer needs to run execute()
@@ -55,20 +55,20 @@ public class openArms extends Command {
     protected boolean isFinished() {
         //if trigger is no longer held
     	RobotMap.armshorizontalMotor.set(0.0);
-    	return check;
+    	return false;
     	//else { return false; }
     }
 
     // Called once after isFinished returns true
     @Override
     protected void end() {
-    	RobotMap.armshorizontalMotor.set(0.0);
+    	RobotMap.armswheelMotor.set(0.0);
     }
 
     // Called when another command which requires one or more of the same
     // subsystems is scheduled to run
     @Override
     protected void interrupted() {
-    	check = true;
+    	end();
     }
 }
