@@ -113,6 +113,7 @@ public class AutoSwitch extends CommandGroup {
     			addSequential (new DriveStraight(0.7, 4.0, 15.0));
     			addSequential (new Pivot(false, 90.0, 0.7)); //turn left
     			addSequential (new DriveStraight(0.3, 2.0, 2.0));
+    			
     		}
     		
     	}
@@ -124,6 +125,7 @@ public class AutoSwitch extends CommandGroup {
     	addSequential (new shootAuto(0.5));
     	addSequential (new DriveStraight (-0.5, 0.5, 1));
     	addSequential (new moveElevatorAuto(-0.5,-250));//power encoderDistance
+    	addSequential (new DriveStraight(-0.5, 2.0, 2.0));
     	
     } 
 }
