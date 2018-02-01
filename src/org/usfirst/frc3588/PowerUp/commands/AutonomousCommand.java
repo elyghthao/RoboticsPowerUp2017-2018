@@ -79,9 +79,13 @@ public class AutonomousCommand extends Command {
     		Command autoSwitch = new AutoSwitch(position, gameData);
     		autoSwitch.start();
     	}
-    	else {
+    	else if (pickAuto == 2.0) {
     		Command ScalePosition = new scalePosition(position, gameData);
     		ScalePosition.start();
+    	}
+    	else {
+    		Command newTest = new moveElevatorAuto(0.6, 15);
+    			newTest.start();
     	}
     }
 
