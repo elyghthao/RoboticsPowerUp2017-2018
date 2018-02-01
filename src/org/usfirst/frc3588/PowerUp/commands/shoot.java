@@ -39,13 +39,13 @@ public class shoot extends Command {
     // Called just before this Command runs the first time
     @Override
     protected void initialize() {
-    	RobotMap.armswheelMotor.set(0.0);
+    	RobotMap.armshorizontalMotor.set(0.0);
     }
 
     // Called repeatedly when this Command is scheduled to run
     @Override
     protected void execute() {
-    	RobotMap.armswheelMotor.set(1.0);
+    	RobotMap.armshorizontalMotor.set(1.0);
     }
 
     // Make this return true when this Command no longer needs to run execute()
