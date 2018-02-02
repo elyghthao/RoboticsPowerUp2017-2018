@@ -99,7 +99,8 @@ public class AutonomousCommand extends Command {
     		}
     	}
     	else {
-    		Command newTest = new moveElevatorAuto(0.6, 15);
+    		System.out.println(pickAuto);
+    		Command newTest = new moveElevatorAuto(0.5, -6000);
     			newTest.start();
     			if (newTest.isCompleted()) {
     				break AUTO_LOOP;

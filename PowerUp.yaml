@@ -483,7 +483,6 @@ Children:
         name: Parameters
         validators: null
         value:
-        - !!robotbuilder.data.properties.ParameterDescriptor {name: direction, type: double}
         - !!robotbuilder.data.properties.ParameterDescriptor {name: gyroAngle, type: double}
         - !!robotbuilder.data.properties.ParameterDescriptor {name: power, type: double}
       Run When Disabled: !!robotbuilder.data.properties.BooleanProperty {default: false,

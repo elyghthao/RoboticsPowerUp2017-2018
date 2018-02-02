@@ -65,24 +65,24 @@ public class RobotMap {
         chassisRobotDrive.setMaxOutput(1.0);
         chassisRobotDrive.setInvertedMotor(RobotDrive.MotorType.kRearLeft, true);
         chassisleftMotorEncoder = new Encoder(4, 5, false, EncodingType.k4X);
-        LiveWindow.addSensor("Chassis", "leftMotorEncoder", chassisleftMotorEncoder);
+        //LiveWindow.addSensor("Chassis", "leftMotorEncoder", chassisleftMotorEncoder);
         chassisleftMotorEncoder.setDistancePerPulse(1.0);
         chassisleftMotorEncoder.setPIDSourceType(PIDSourceType.kRate);
         chassisrightMotorEncoder = new Encoder(2, 3, false, EncodingType.k4X);
-        LiveWindow.addSensor("Chassis", "rightMotorEncoder", chassisrightMotorEncoder);
+        //LiveWindow.addSensor("Chassis", "rightMotorEncoder", chassisrightMotorEncoder);
         chassisrightMotorEncoder.setDistancePerPulse(1.0);
         chassisrightMotorEncoder.setPIDSourceType(PIDSourceType.kRate);
         chassisUltrasonic1 = new Ultrasonic(15, 14);
-        LiveWindow.addSensor("Chassis", "Ultrasonic 1", chassisUltrasonic1);
+       // LiveWindow.addSensor("Chassis", "Ultrasonic 1", chassisUltrasonic1);
         
         elevatorliftMotor = new WPI_TalonSRX(2);
         
         
         elevatorliftSolenoid = new Solenoid(0, 0);
-        LiveWindow.addActuator("Elevator", "liftSolenoid", elevatorliftSolenoid);
+        //LiveWindow.addActuator("Elevator", "liftSolenoid", elevatorliftSolenoid);
         
         elevatorliftEncoder = new Encoder(0, 1, false, EncodingType.k4X);
-        LiveWindow.addSensor("Elevator", "liftEncoder", elevatorliftEncoder);
+        //LiveWindow.addSensor("Elevator", "liftEncoder", elevatorliftEncoder);
         elevatorliftEncoder.setDistancePerPulse(1.0);
         elevatorliftEncoder.setPIDSourceType(PIDSourceType.kRate);
         armshorizontalMotor = new WPI_TalonSRX(3);

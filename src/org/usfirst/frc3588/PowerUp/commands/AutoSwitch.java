@@ -58,15 +58,15 @@ public class AutoSwitch extends CommandGroup {
     		
     		if (switchPosition.charAt(0) == 'R') {
     			
-    			addSequential (new Pivot(true, 90.0, 0.7)); //turn right
+    			addSequential (new Pivot( 90.0, 0.7)); //turn right
     			addSequential (new DriveStraight(0.7, 3.0, 5.0));
-    			addSequential (new Pivot(false, 90.0, 0.7)); //turn left
+    			addSequential (new Pivot( 90.0, 0.7)); //turn left
     			
     		} else {
     			
-    			addSequential (new Pivot(false, 90.0, 0.7)); //turn left
+    			addSequential (new Pivot( 90.0, 0.7)); //turn left
     			addSequential (new DriveStraight(0.7, 3.0, 5.0));
-    			addSequential (new Pivot(true, 90.0, 0.7)); //turn right
+    			addSequential (new Pivot( 90.0, 0.7)); //turn right
     			
     		}
     		
@@ -82,11 +82,11 @@ public class AutoSwitch extends CommandGroup {
     		
     		if (switchPosition.charAt(0) == 'R') {
     			
-    			addSequential (new Pivot(false, 90.0, 0.7)); //turn left
+    			addSequential (new Pivot(90.0, 0.7)); //turn left
     			
     		} else {
     			
-    			addSequential (new Pivot(true, 90.0, 0.7)); //turn right
+    			addSequential (new Pivot( 90.0, 0.7)); //turn right
     			
     		}
     		
@@ -97,21 +97,21 @@ public class AutoSwitch extends CommandGroup {
     		if (switchPosition.charAt(0) == 'R') {
     			
     			addSequential (new DriveStraight(0.7, 4.0, 9.0));
-    			addSequential (new Pivot(true, 90.0, 0.7)); //turn right
+    			addSequential (new Pivot( 90.0, 0.7)); //turn right
     			addSequential (new DriveStraight(0.7, 4.0, 15.0));
-    			addSequential (new Pivot(true, 90.0, 0.7)); //turn right
+    			addSequential (new Pivot( 90.0, 0.7)); //turn right
     			addSequential (new DriveStraight(0.7, 4.0, 15.0));
-    			addSequential (new Pivot(true, 90.0, 0.7)); //turn right
+    			addSequential (new Pivot( 90.0, 0.7)); //turn right
     			addSequential (new DriveStraight(0.3, 2.0, 2.0));
     			
     		} else {
     			
     			addSequential (new DriveStraight(0.7, 4.0, 9.0));
-    			addSequential (new Pivot(false, 90.0, 0.7)); //turn left
+    			addSequential (new Pivot( 90.0, 0.7)); //turn left
     			addSequential (new DriveStraight(0.7, 4.0, 15.0));
-    			addSequential (new Pivot(false, 90.0, 0.7)); //turn left
+    			addSequential (new Pivot(90.0, 0.7)); //turn left
     			addSequential (new DriveStraight(0.7, 4.0, 15.0));
-    			addSequential (new Pivot(false, 90.0, 0.7)); //turn left
+    			addSequential (new Pivot( 90.0, 0.7)); //turn left
     			addSequential (new DriveStraight(0.3, 2.0, 2.0));
     			
     		}

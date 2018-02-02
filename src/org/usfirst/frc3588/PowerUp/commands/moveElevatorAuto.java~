@@ -54,21 +54,26 @@ public class moveElevatorAuto extends Command {
     // Called repeatedly when this Command is scheduled to run
     @Override
     protected void execute() {
+    	
     	if (m_power >= 0 ) {//If 
-    		if (RobotMap.elevatorliftEncoder.get() <= (.95 * m_power)) {
-    			RobotMap.elevatorliftMotor.set(0.1);
-    		}else {
+    		if (RobotMap.elevatorliftEncoder.get() <= (.85 * m_encoderDistance)) {
     			RobotMap.elevatorliftMotor.set(m_power);
+    		}else {
+    			RobotMap.elevatorliftMotor.set(0.1);
     			}
     		}
     	
     	
-    	if (m_power<= 0) {
-    		if (RobotMap.elevatorliftEncoder.get() >= (.95 * m_power)) {
-    			RobotMap.elevatorliftMotor.set(-0.1);
-    			
-    		}else {
+    	if (m_power< 0) {
+    		if (RobotMap.elevatorliftEncoder.get() >= ((.15 * m_encoderDistance) + m_encoderDistance) && m_encoderDistance != 0) {
     			RobotMap.elevatorliftMotor.set(m_power);
+    			
+    		}
+    		else if (m_encoderDistance == 0 && RobotMap.elevatorliftEncoder.get() >= 10) {
+    			RobotMap.elevatorliftMotor.set(m_power);
+    		}
+    		else {
+    			RobotMap.elevatorliftMotor.set(-0.1);
     			}
     		}
     	
@@ -79,13 +84,13 @@ public class moveElevatorAuto extends Command {
     @Override
     protected boolean isFinished() {
     	
-    	return (RobotMap.elevatorliftEncoder.get() >= m_encoderDistance);
+    	return ((RobotMap.elevatorliftEncoder.get() >= m_encoderDistance + 3 && m_power > 0) || (RobotMap.elevatorliftEncoder.get() <= m_encoderDistance + 3 && m_power < 0));
     }
 
     // Called once after isFinished returns true
     @Override
     protected void end() {
-    	RobotMap.elevatorliftMotor.set(0.0);
+    	RobotMap.elevatorliftMotor.set(RobotMap.STOP);
     }
 
     // Called when another command which requires one or more of the same
