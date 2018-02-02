@@ -47,7 +47,7 @@ public class moveElevatorTele extends Command {
     @Override
     protected void execute() {
     	RobotMap.elevatorliftMotor.set(Robot.oi.controller.getY());
-    	//System.out.println(RobotMap.elevatorliftEncoder.getRaw());
+    	System.out.println(RobotMap.elevatorliftEncoder.getRaw());
     }
 
     // Make this return true when this Command no longer needs to run execute()
