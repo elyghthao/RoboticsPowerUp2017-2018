@@ -58,15 +58,15 @@ public class AutoSwitch extends CommandGroup {
     		
     		if (switchPosition.charAt(0) == 'R') {
     			
-    			addSequential (new Pivot( 90.0, 0.7)); //turn right
+    			addSequential (new Pivot(true, 90.0, 0.7)); //turn right
     			addSequential (new DriveStraight(0.7, 3.0, 5.0));
-    			addSequential (new Pivot( 90.0, 0.7)); //turn left
+    			addSequential (new Pivot(false, 90.0, 0.7)); //turn left
     			
     		} else {
     			
-    			addSequential (new Pivot( 90.0, 0.7)); //turn left
+    			addSequential (new Pivot(false, 90.0, 0.7)); //turn left
     			addSequential (new DriveStraight(0.7, 3.0, 5.0));
-    			addSequential (new Pivot( 90.0, 0.7)); //turn right
+    			addSequential (new Pivot(true, 90.0, 0.7)); //turn right
     			
     		}
     		
@@ -82,37 +82,47 @@ public class AutoSwitch extends CommandGroup {
     		
     		if (switchPosition.charAt(0) == 'R') {
     			
-    			addSequential (new Pivot(90.0, 0.7)); //turn left
+    			addSequential (new Pivot(false, 90.0, 0.7)); //turn left
     			
     		} else {
     			
-    			addSequential (new Pivot( 90.0, 0.7)); //turn right
+    			addSequential (new Pivot(true, 90.0, 0.7)); //turn right
     			
     		}
     		
-    		addSequential (new DriveStraight(0.3, 2.0, 2.0));
+    		addSequential (new newDriveStraight(0.3, 0.0, 0.0, true));
     		
     	} else {
     		
     		if (switchPosition.charAt(0) == 'R') {
     			
     			addSequential (new DriveStraight(0.7, 4.0, 9.0));
-    			addSequential (new Pivot( 90.0, 0.7)); //turn right
+    			addSequential (new Pivot(true, 90.0, 0.7)); //turn right
     			addSequential (new DriveStraight(0.7, 4.0, 15.0));
-    			addSequential (new Pivot( 90.0, 0.7)); //turn right
+    			addSequential (new Pivot(true, 90.0, 0.7)); //turn right
     			addSequential (new DriveStraight(0.7, 4.0, 15.0));
-    			addSequential (new Pivot( 90.0, 0.7)); //turn right
+//<<<<<<< HEAD
+    			addSequential (new Pivot(true, 90.0, 0.7)); //turn right
+    			addSequential (new newDriveStraight(0.3, 0.0, 0.0, true));
+//=======
+    			addSequential (new Pivot(true, 90.0, 0.7)); //turn right
     			addSequential (new DriveStraight(0.3, 2.0, 2.0));
+//>>>>>>> branch 'master' of https://github.com/frc-3588/PowerUp
     			
     		} else {
     			
     			addSequential (new DriveStraight(0.7, 4.0, 9.0));
-    			addSequential (new Pivot( 90.0, 0.7)); //turn left
+    			addSequential (new Pivot(false, 90.0, 0.7)); //turn left
     			addSequential (new DriveStraight(0.7, 4.0, 15.0));
-    			addSequential (new Pivot(90.0, 0.7)); //turn left
+    			addSequential (new Pivot(false, 90.0, 0.7)); //turn left
     			addSequential (new DriveStraight(0.7, 4.0, 15.0));
-    			addSequential (new Pivot( 90.0, 0.7)); //turn left
+//<<<<<<< HEAD
+    			addSequential (new Pivot(false, 90.0, 0.7)); //turn left
+    			addSequential (new newDriveStraight(0.3, 0.0, 0.0, true));
+//=======
+    			addSequential (new Pivot(false, 90.0, 0.7)); //turn left
     			addSequential (new DriveStraight(0.3, 2.0, 2.0));
+//>>>>>>> branch 'master' of https://github.com/frc-3588/PowerUp
     			
     		}
     		
@@ -129,3 +139,4 @@ public class AutoSwitch extends CommandGroup {
     	
     } 
 }
+

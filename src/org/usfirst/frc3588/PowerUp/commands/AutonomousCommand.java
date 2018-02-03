@@ -87,7 +87,7 @@ public class AutonomousCommand extends Command {
     
     	AUTO_LOOP:
     	if (pickAuto == AUTORUN) {
-    		Command autoRun = new AutoRun(position, gameData);
+    		Command autoRun = new AutoRun();
     		autoRun.start();
     		if (Robot.Debug) {
     			System.out.println("In AutoRun");
