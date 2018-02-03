@@ -45,6 +45,7 @@ public class drive extends Command {
     // Called just before this Command runs the first time
     @Override
     protected void initialize() {
+    	Robot.Debug = SmartDashboard.getBoolean("DB/Button 0", false);
     	RobotMap.chassisleftMotor.set(0);
     	RobotMap.chassisrightMotor.set(0);
     }
