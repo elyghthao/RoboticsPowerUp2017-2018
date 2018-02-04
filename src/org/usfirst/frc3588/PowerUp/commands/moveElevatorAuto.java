@@ -59,8 +59,8 @@ public class moveElevatorAuto extends Command {
     @Override
     protected void execute() {
     	
-    	RobotMap.elevatorliftMotor.set(m_power);
-    	System.out.println(RobotMap.elevatorliftEncoder.getRaw());
+    	RobotMap.elevatorliftMotor.set(-m_power);
+    	System.out.println("elevator encoder from auto:" +RobotMap.elevatorliftEncoder.getRaw());
     	
     }
 

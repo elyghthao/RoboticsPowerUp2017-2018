@@ -172,23 +172,6 @@ Children:
       Name: liftMotor
     - Children: []
       Properties:
-        Output Channel (Solenoid): !!robotbuilder.data.properties.ChoicesProperty
-          choices: ['0', '1', '2', '3', '4', '5', '6', '7']
-          default: '0'
-          name: Output Channel (Solenoid)
-          validators: [Solenoid]
-          value: '0'
-        Output PCM (Solenoid): !!robotbuilder.data.properties.ChoicesProperty
-          choices: ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11',
-            '12', '13', '14', '15', '16', '17', '18', '19', '20']
-          default: '0'
-          name: Output PCM (Solenoid)
-          validators: [Solenoid]
-          value: '0'
-      Base: Solenoid
-      Name: liftSolenoid
-    - Children: []
-      Properties:
         Channel A Channel (Digital): !!robotbuilder.data.properties.ChoicesProperty
           choices: *id003
           default: '0'
@@ -219,6 +202,16 @@ Children:
           value: '1'
       Base: Quadrature Encoder
       Name: liftEncoder
+    - Children: []
+      Properties:
+        Output Channel (Relay): !!robotbuilder.data.properties.ChoicesProperty
+          choices: ['0', '1', '2', '3']
+          default: '0'
+          name: Output Channel (Relay)
+          validators: [RelayOutput]
+          value: '0'
+      Base: Spike
+      Name: 'Spike '
     Properties:
       Send to SmartDashboard: !!robotbuilder.data.properties.BooleanProperty {default: false,
         name: Send to SmartDashboard, validators: null, value: false}
@@ -779,10 +772,10 @@ Children:
       Requires: !!robotbuilder.data.properties.TypeSelectionProperty {default: None,
         name: Requires, type: Subsystem, validators: null, value: Chassis}
       Parameter presets: !!robotbuilder.data.properties.ParameterSetProperty
-        default: &id015 []
+        default: []
         name: Parameter presets
         validators: null
-        value: *id015
+        value: []
       Button on SmartDashboard: !!robotbuilder.data.properties.BooleanProperty {default: true,
         name: Button on SmartDashboard, validators: null, value: false}
     Base: Command

@@ -10,6 +10,7 @@
 
 
 package org.usfirst.frc3588.PowerUp.commands;
+import edu.wpi.first.wpilibj.Relay;
 import edu.wpi.first.wpilibj.command.Command;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 
@@ -48,17 +49,23 @@ public class drive extends Command {
     	Robot.Debug = SmartDashboard.getBoolean("DB/Button 0", false);
     	RobotMap.chassisleftMotor.set(0);
     	RobotMap.chassisrightMotor.set(0);
+    	RobotMap.elevatorSpike.set(Relay.Value.kOff);
+    	
+    	
     }
 
     // Called repeatedly when this Command is scheduled to run
     @Override
     protected void execute() {
-
-    		
     	RobotMap.chassisleftMotor.set(Robot.oi.rightJoystick.getY());
     	RobotMap.chassisrightMotor.set(Robot.oi.leftJoystick.getY());
     	distance = RobotMap.chassisGyro.getAngle();
-    	System.out.println(distance);
+    	System.out.println("gyro from tele: " +distance);
+    	
+    	
+    	
+    	
+    	
     }
 
     // Make this return true when this Command no longer needs to run execute()
