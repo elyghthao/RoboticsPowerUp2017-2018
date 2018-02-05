@@ -10,6 +10,7 @@
 
 
 package org.usfirst.frc3588.PowerUp.commands;
+import edu.wpi.first.wpilibj.Relay;
 import edu.wpi.first.wpilibj.command.Command;
 import org.usfirst.frc3588.PowerUp.Robot;
 import org.usfirst.frc3588.PowerUp.RobotMap;
@@ -46,19 +47,28 @@ public class moveElevatorTele extends Command {
     // Called repeatedly when this Command is scheduled to run
     @Override
     protected void execute() {
-    	RobotMap.elevatorliftMotor.set(Robot.oi.controller.getY());
-    	System.out.println(RobotMap.elevatorliftEncoder.getRaw());
+    	if (Robot.oi.getController().getY() < 0.05 && Robot.oi.getController().getY() > -0.05) {
+    		RobotMap.elevatorSpike.set(Relay.Value.kOn);
+    		RobotMap.elevatorliftMotor.set(0.0);
+    		
+    	}else {
+    		RobotMap.elevatorliftMotor.set(-Robot.oi.controller.getY());
+    		RobotMap.elevatorSpike.set(Relay.Value.kOff);
+    	}
+    	
     }
 
     // Make this return true when this Command no longer needs to run execute()
     @Override
     protected boolean isFinished() {
+    	
         return false;
     }
 
     // Called once after isFinished returns true
     @Override
     protected void end() {
+    	
     	RobotMap.elevatorliftMotor.set(0.0);
     	RobotMap.elevatorliftEncoder.reset();
     }
@@ -67,6 +77,6 @@ public class moveElevatorTele extends Command {
     // subsystems is scheduled to run
     @Override
     protected void interrupted() {
-    	end();
+    	
     }
 }

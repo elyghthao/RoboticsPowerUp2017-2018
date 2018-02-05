@@ -50,7 +50,7 @@ public class moveElevator extends Command {
     protected void initialize() {
     	RobotMap.elevatorliftEncoder.reset();
     	encoderDistance = RobotMap.elevatorliftEncoder.get();
-    	RobotMap.elevatorliftSolenoid.set(false);
+    	//RobotMap.elevatorliftSolenoid.set(false);
     	RobotMap.elevatorliftMotor.set(0.8);
     }
 
@@ -72,15 +72,15 @@ public class moveElevator extends Command {
     			|| (elevatorHeight == 3 && encoderDistance > MID_SCALE) || (elevatorHeight == 4 && encoderDistance > HIGH_SCALE)
     			|| (elevatorHeight == 5 && encoderDistance >= CLIMB_HEIGHT) || (elevatorHeight == 6 && encoderDistance > ACQUIRE_HEIGHT)) {
     		RobotMap.elevatorliftMotor.set(0.0);
-    		RobotMap.elevatorliftSolenoid.set(true);
+    		//RobotMap.elevatorliftSolenoid.set(true);
     		//MOVE FORWARD
     		//PLACE CUBE
     		//MOVE BACKWARD
-    		RobotMap.elevatorliftSolenoid.set(false);
+    		//RobotMap.elevatorliftSolenoid.set(false);
     		RobotMap.elevatorliftMotor.set(-0.8);
     		while (!(RobotMap.elevatorliftEncoder.get() < ACQUIRE_HEIGHT + 4)) {
     			RobotMap.elevatorliftMotor.set(0.0);
-    			RobotMap.elevatorliftSolenoid.set(true);
+    			//RobotMap.elevatorliftSolenoid.set(true);
     		}
     		return true;
     	}

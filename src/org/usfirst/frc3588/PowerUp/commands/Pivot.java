@@ -68,7 +68,7 @@ public class Pivot extends Command {
 		
 		
     	gyroReading = RobotMap.chassisGyro.getAngle();
-    	System.out.println(gyroReading );
+    	System.out.println( "gyro reading from pivot:" +gyroReading );
     	
     	
     	
