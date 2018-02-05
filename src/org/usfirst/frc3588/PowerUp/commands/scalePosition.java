@@ -50,36 +50,23 @@ public class scalePosition extends CommandGroup {
         		} else {
         			addSequential(new Pivot(-90.0, 0.7)); //turn left
         		}
-        		
-        		
-        		
-        		
         	}
-        	
-        	
-        	
-        	
-        	
         	
         	if (robotPosition.charAt(0) == scalePosition.charAt(1)) {//position aligned with scale
         		addSequential (new DriveStraight(.5, .5, 1));//power time distance
         		if (robotPosition.charAt(0) == 'L' ) {
         			addSequential (new Pivot(5, .3));
-        			}else {
+        			} else {
         				addSequential (new Pivot (-5, .3));
-        			}
-        		
-        		
+        			}	
         	}
         	
-        	
-        	
-        	
-        	
+        	//addSequential (new moveElevator(4));
         	addSequential (new moveElevatorAuto(0.5,500));//power encoderDistance
     		addSequential (new DriveStraight (.5, .5, 1));
     		addSequential (new shootAuto(0.5));
     		addSequential (new DriveStraight (-.5, .5, 1));
+    		//addSequential (new moveElevator(6));
     		addSequential (new moveElevatorAuto(-0.5,-500));//power encoderDistance
         // Add Commands here:
         // e.g. addSequential(new Command1());
