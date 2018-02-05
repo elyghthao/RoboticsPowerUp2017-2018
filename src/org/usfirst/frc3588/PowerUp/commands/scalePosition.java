@@ -75,11 +75,12 @@ public class scalePosition extends CommandGroup {
         	
         	
         	
-        	
+        	//addSequential (new moveElevator(4));
         	addSequential (new moveElevatorAuto(0.5,500));//power encoderDistance
     		addSequential (new DriveStraight (.5, .5, 1));
     		addSequential (new shootAuto(0.5));
     		addSequential (new DriveStraight (-.5, .5, 1));
+    		//addSequential (new moveElevator(6));
     		addSequential (new moveElevatorAuto(-0.5,-500));//power encoderDistance
         // Add Commands here:
         // e.g. addSequential(new Command1());

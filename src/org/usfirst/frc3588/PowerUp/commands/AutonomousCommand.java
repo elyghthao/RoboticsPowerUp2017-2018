@@ -11,6 +11,7 @@
 
 package org.usfirst.frc3588.PowerUp.commands;
 import edu.wpi.first.wpilibj.DriverStation;
+import edu.wpi.first.wpilibj.Timer;
 import edu.wpi.first.wpilibj.command.Command;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 
@@ -70,11 +71,8 @@ public class AutonomousCommand extends Command {
     	
 		gameData = DriverStation.getInstance().getGameSpecificMessage();
 		
-		setTimeout(Delay * 2);
+		Timer.delay(Delay * 2);
 		
-		while (!isTimedOut()) {
-		
-		}
 		
 		RobotMap.chassisleftMotor.set(RobotMap.STOP);
 		RobotMap.chassisrightMotor.set(RobotMap.STOP);
