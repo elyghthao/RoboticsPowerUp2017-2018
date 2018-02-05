@@ -48,9 +48,7 @@ public class AutoSwitch extends CommandGroup {
     	
     	//checks if robot is on same side as the switch
     	if (robotPosition.charAt(0) == switchPosition.charAt(0)) {
-    		
     		sameSide = true;
-    		
     	}
     	
     	// moves robot from back wall to pivot if needed
@@ -58,17 +56,13 @@ public class AutoSwitch extends CommandGroup {
     	
     	// checks if robot is in middle position
     	if (robotPosition.charAt(0) == 'M') {
-    		
     		// checks which side switch is on
     		// moves robot to same side as switch
     		if (switchPosition.charAt(0) == 'R') {
-    			
     			addSequential (new Pivot(90.0, 0.7)); //turn right 90 degrees
     			addSequential (new DriveStraight(0.7, 3.0, 5.0));
     			addSequential (new Pivot(-90.0, 0.7)); //turn left 90 degrees
-    			
-    		} else {
-    			
+    		} else {	
     			addSequential (new Pivot(-90.0, 0.7)); //turn left 90 degrees
     			addSequential (new DriveStraight(0.7, 3.0, 5.0));
     			addSequential (new Pivot(90.0, 0.7)); //turn right 90 degrees
@@ -83,19 +77,13 @@ public class AutoSwitch extends CommandGroup {
     	
     	// checks if robot is on same side
     	if (sameSide) {
-    		
     		addSequential (new DriveStraight(0.7, 2.0, 5.0));
     		
     		if (switchPosition.charAt(0) == 'R') {
-    			
     			addSequential (new Pivot(-90.0, 0.7)); //turn left 90 degrees
-    			
     		} else {
-    			
     			addSequential (new Pivot(90.0, 0.7)); //turn right 90 degrees
-    			
     		}
-    		
     		addSequential (new newDriveStraight(0.3, 0.0, 0.0, true));
     		
     	} else {
@@ -113,10 +101,7 @@ public class AutoSwitch extends CommandGroup {
 
     			addSequential (new Pivot(90.0, 0.7)); //turn right
     			addSequential (new DriveStraight(0.3, 2.0, 2.0));
-
-    			
     		} else {
-    			
     			addSequential (new DriveStraight(0.7, 4.0, 9.0));
     			addSequential (new Pivot(-90.0, 0.7)); //turn left
     			addSequential (new DriveStraight(0.7, 4.0, 15.0));
@@ -129,12 +114,8 @@ public class AutoSwitch extends CommandGroup {
     			addSequential (new Pivot(-90.0, 0.7)); //turn left
     			addSequential (new DriveStraight(0.3, 2.0, 2.0));
 //>>>>>>> branch 'master' of https://github.com/frc-3588/PowerUp
-    			
     		}
-    		
     	}
-    	
-    	
     	//addSequential (new moveElevator(1));
      	addSequential (new moveElevatorAuto(0.5, 30));//power encoderDistance
     	addSequential (new DriveStraight (0.5, 0.5, 1));
