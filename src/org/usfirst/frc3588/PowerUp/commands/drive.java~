@@ -63,14 +63,7 @@ public class drive extends Command {
     	System.out.println("gyro from tele: " +distance);
     	
     	
-    	if (Robot.oi.getController().getY() > 0.05 && Robot.oi.getController().getY() < -0.05) {
-    		RobotMap.elevatorSpike.set(Relay.Value.kOff);
-    		RobotMap.elevatorliftMotor.set(0.0);
-    		
-    	}else {
-    		RobotMap.elevatorliftMotor.set(-Robot.oi.controller.getY());
-    		RobotMap.elevatorSpike.set(Relay.Value.kOn);
-    	}
+    	
     	
     	
     }
