@@ -10,6 +10,7 @@
 
 package org.usfirst.frc3588.PowerUp.commands;
 
+import edu.wpi.first.wpilibj.Timer;
 import edu.wpi.first.wpilibj.command.Command;
 import org.usfirst.frc3588.PowerUp.Robot;
 import org.usfirst.frc3588.PowerUp.RobotMap;
@@ -54,7 +55,7 @@ public class DriveStraight extends Command {
 			setTimeout(m_time);
 		}
 		if (m_distance != 0) {
-			RobotMap.chassisleftMotorEncoder.reset();
+			//RobotMap.chassisleftMotorEncoder.reset();
 			RobotMap.chassisrightMotorEncoder.reset();
 		}
 	}
@@ -64,13 +65,14 @@ public class DriveStraight extends Command {
 	protected void execute() {
 		RobotMap.chassisleftMotor.set(m_power * DL);
 		RobotMap.chassisrightMotor.set(m_power * DR);
+		System.out.println("encoder value from tele: " + RobotMap.chassisrightMotorEncoder.getDistance());
 	}
 
 	// Make this return true when this Command no longer needs to run execute()
 	@Override
 	protected boolean isFinished() {
 		if ((m_time > 0 && isTimedOut())
-				|| (m_distance > 0 && RobotMap.chassisleftMotorEncoder.getDistance() >= m_distance)) {
+				|| (m_distance > 0 && RobotMap.chassisrightMotorEncoder.getDistance() >= m_distance)) {
 			return true;
 		} else {
 			return false;
@@ -80,6 +82,9 @@ public class DriveStraight extends Command {
 	// Called once after isFinished returns true
 	@Override
 	protected void end() {
+		RobotMap.chassisleftMotor.set(0.1);
+		RobotMap.chassisrightMotor.set(0.1);
+		Timer.delay(0.05);
 		RobotMap.chassisleftMotor.set(RobotMap.STOP);
 		RobotMap.chassisrightMotor.set(RobotMap.STOP);
 	}

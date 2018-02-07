@@ -129,7 +129,7 @@ public class AutonomousCommand extends Command {
     	}
     	else {
     		System.out.println(pickAuto);
-    		Command newTest = new moveElevatorAuto(0.5, -6000);
+    		Command newTest = new Pivot(90, 0.3);
     			newTest.start();
 //    			if (newTest.isCompleted()) {
 //    				break AUTO_LOOP;

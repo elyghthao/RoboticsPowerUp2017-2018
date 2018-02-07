@@ -59,8 +59,8 @@ public class drive extends Command {
     protected void execute() {
     	RobotMap.chassisleftMotor.set(Robot.oi.rightJoystick.getY());
     	RobotMap.chassisrightMotor.set(Robot.oi.leftJoystick.getY());
-    	distance = RobotMap.chassisGyro.getAngle();
-    	System.out.println("gyro from tele: " +distance);
+    	distance = RobotMap.chassisrightMotorEncoder.getDistance();
+    	System.out.println("encoder from tele: " +distance);
     	
     	
     	

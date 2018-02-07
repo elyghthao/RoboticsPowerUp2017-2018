@@ -56,10 +56,9 @@ public class newDriveStraight extends Command {
     		setTimeout(m_time);
     	}
     	if (m_distance != 0) {
-    		RobotMap.chassisleftMotorEncoder.reset();
+    		//RobotMap.chassisleftMotorEncoder.reset();
     		RobotMap.chassisrightMotorEncoder.reset();
     	}
-    	
     }
 
     // Called repeatedly when this Command is scheduled to run
@@ -76,7 +75,7 @@ public class newDriveStraight extends Command {
     		return true;
     	}
     	else if ((m_time > 0 && isTimedOut())
-				|| (m_distance > 0 && RobotMap.chassisleftMotorEncoder.getDistance() >= m_distance)) {
+				|| (m_distance > 0 && RobotMap.chassisrightMotorEncoder.getDistance() >= m_distance)) {
 			return true;
 		} 
     	else {

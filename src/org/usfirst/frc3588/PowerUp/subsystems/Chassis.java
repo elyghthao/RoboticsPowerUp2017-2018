@@ -40,7 +40,6 @@ public class Chassis extends Subsystem {
     private final WPI_TalonSRX leftMotor = RobotMap.chassisleftMotor;
     private final WPI_TalonSRX rightMotor = RobotMap.chassisrightMotor;
     private final RobotDrive robotDrive = RobotMap.chassisRobotDrive;
-    private final Encoder leftMotorEncoder = RobotMap.chassisleftMotorEncoder;
     private final Encoder rightMotorEncoder = RobotMap.chassisrightMotorEncoder;
     private final Ultrasonic ultrasonic1 = RobotMap.chassisUltrasonic1;
 

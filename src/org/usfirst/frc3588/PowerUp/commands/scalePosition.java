@@ -68,6 +68,8 @@ public class scalePosition extends CommandGroup {
     		addSequential (new DriveStraight (-.5, .5, 1));
     		//addSequential (new moveElevator(6));
     		addSequential (new moveElevatorAuto(-0.5,-500));//power encoderDistance
+    		
+    		
         // Add Commands here:
         // e.g. addSequential(new Command1());
         //      addSequential(new Command2());

@@ -35,7 +35,6 @@ public class RobotMap {
     public static WPI_TalonSRX chassisleftMotor;
     public static WPI_TalonSRX chassisrightMotor;
     public static RobotDrive chassisRobotDrive;
-    public static Encoder chassisleftMotorEncoder;
     public static Encoder chassisrightMotorEncoder;
     public static Ultrasonic chassisUltrasonic1;
     public static WPI_TalonSRX elevatorliftMotor;
@@ -65,10 +64,6 @@ public class RobotMap {
         chassisRobotDrive.setSensitivity(0.5);
         chassisRobotDrive.setMaxOutput(1.0);
         chassisRobotDrive.setInvertedMotor(RobotDrive.MotorType.kRearLeft, true);
-        chassisleftMotorEncoder = new Encoder(4, 5, false, EncodingType.k4X);
-        LiveWindow.addSensor("Chassis", "leftMotorEncoder", chassisleftMotorEncoder);
-        chassisleftMotorEncoder.setDistancePerPulse(1.0);
-        chassisleftMotorEncoder.setPIDSourceType(PIDSourceType.kRate);
         chassisrightMotorEncoder = new Encoder(2, 3, false, EncodingType.k4X);
         LiveWindow.addSensor("Chassis", "rightMotorEncoder", chassisrightMotorEncoder);
         chassisrightMotorEncoder.setDistancePerPulse(1.0);
