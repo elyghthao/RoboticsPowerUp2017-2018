@@ -50,22 +50,21 @@ public class drive extends Command {
     	RobotMap.chassisleftMotor.set(0);
     	RobotMap.chassisrightMotor.set(0);
     	RobotMap.elevatorSpike.set(Relay.Value.kOff);
-    	
-    	
+    	RobotMap.chassisrightMotorEncoder.reset();
+    	RobotMap.chassisGyro.reset();
     }
 
     // Called repeatedly when this Command is scheduled to run
     @Override
     protected void execute() {
+    	if (RobotMap.chassisGyro.getAngle()>=360 || RobotMap.chassisGyro.getAngle() <= -360) {
+    		RobotMap.chassisGyro.reset();
+    	}
     	RobotMap.chassisleftMotor.set(Robot.oi.rightJoystick.getY());
     	RobotMap.chassisrightMotor.set(Robot.oi.leftJoystick.getY());
-    	distance = RobotMap.chassisrightMotorEncoder.getDistance();
-    	System.out.println("encoder from tele: " +distance);
-    	
-    	
-    	
-    	
-    	
+    	distance = -RobotMap.chassisrightMotorEncoder.get();
+//    	distance = RobotMap.chassisGyro.getAngle();
+    	System.out.println("encoder distance is : " + distance);
     }
 
     // Make this return true when this Command no longer needs to run execute()

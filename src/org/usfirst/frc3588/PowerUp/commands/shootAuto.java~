@@ -51,7 +51,7 @@ public class shootAuto extends Command {
     @Override
     protected void execute() {
     	RobotMap.armswheelMotor.set(1.0);
-    	Timer.delay(2.0);
+    	Timer.delay(4.0);
     	check=true;
     }
 

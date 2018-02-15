@@ -33,9 +33,9 @@ public class scalePosition extends CommandGroup {
         		addSequential (new DriveStraight(0.7, 5.0, 16.0));
         		
         		if (robotPosition.charAt(0) == 'R' ) {
-        			addSequential (new Pivot(-90.0, 0.7)); //turn left 
+        			addSequential (new Pivot(-90.0)); //turn left 
         		} else {
-        			addSequential(new Pivot(90.0, 0.7)); //turn right
+        			addSequential(new Pivot(90.0)); //turn right
         		}
         		
         		
@@ -43,18 +43,18 @@ public class scalePosition extends CommandGroup {
         		
         		
         		if (robotPosition.charAt(0) == 'L' ) {
-        			addSequential (new Pivot(90.0, 0.7)); //turn right 
+        			addSequential (new Pivot(90.0)); //turn right 
         			
         		} else {
-        			addSequential(new Pivot(-90.0, 0.7)); //turn left
+        			addSequential(new Pivot(-90.0)); //turn left
         		}
         		addSequential(new DriveStraight(0.7, 3.0, 4.0));
         		
         		if (robotPosition.charAt(0) == 'L' ) {
-        			addSequential (new Pivot(90.0, 0.7)); //turn right 
+        			addSequential (new Pivot(90.0)); //turn right 
         			
         		} else {
-        			addSequential(new Pivot(-90.0, 0.7)); //turn left
+        			addSequential(new Pivot(-90.0)); //turn left
         		}
         	}
         	
@@ -65,9 +65,9 @@ public class scalePosition extends CommandGroup {
         	if (robotPosition.charAt(0) == scalePosition.charAt(1)) {//position aligned with scale
         		addSequential (new DriveStraight(.5, .5, 1));//power time distance
         		if (robotPosition.charAt(0) == 'L' ) {
-        			addSequential (new Pivot(5, .3));
+        			addSequential (new Pivot(5));
         			} else {
-        				addSequential (new Pivot (-5, .3));
+        				addSequential (new Pivot (-5));
         			}	
         	}
         	

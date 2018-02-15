@@ -41,13 +41,13 @@ public class openArms extends Command {
     protected void initialize() {
     	check = false;
     	
-    	RobotMap.armswheelMotor.set(0.0);
+    	RobotMap.armshorizontalMotor.set(0.0);
     }
 
     // Called repeatedly when this Command is scheduled to run
     @Override
     protected void execute() {
-    	RobotMap.armswheelMotor.set(-1.0);
+    	RobotMap.armshorizontalMotor.set(-1.0);
     }
 
     // Make this return true when this Command no longer needs to run execute()
@@ -59,7 +59,7 @@ public class openArms extends Command {
     // Called once after isFinished returns true
     @Override
     protected void end() {
-    	RobotMap.armswheelMotor.set(0.0);
+    	RobotMap.armshorizontalMotor.set(0.0);
     }
 
     // Called when another command which requires one or more of the same
