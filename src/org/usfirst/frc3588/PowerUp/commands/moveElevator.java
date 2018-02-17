@@ -51,7 +51,7 @@ public class moveElevator extends Command {
     	RobotMap.elevatorliftEncoder.reset();
     	encoderDistance = RobotMap.elevatorliftEncoder.get();
     	//RobotMap.elevatorliftSolenoid.set(false);
-    	RobotMap.elevatorliftMotor.set(0.8);
+    	RobotMap.elevatorliftMotor.set(0.9);
     }
 
     // Called repeatedly when this Command is scheduled to run

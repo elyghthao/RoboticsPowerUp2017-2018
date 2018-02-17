@@ -60,8 +60,8 @@ public class drive extends Command {
     	if (RobotMap.chassisGyro.getAngle()>=360 || RobotMap.chassisGyro.getAngle() <= -360) {
     		RobotMap.chassisGyro.reset();
     	}
-    	RobotMap.chassisleftMotor.set(Robot.oi.rightJoystick.getY());
-    	RobotMap.chassisrightMotor.set(Robot.oi.leftJoystick.getY());
+    	RobotMap.chassisleftMotor.set((Robot.oi.rightJoystick.getY()) * 0.8);
+    	RobotMap.chassisrightMotor.set((Robot.oi.leftJoystick.getY()) * 0.8);
     	distance = -RobotMap.chassisrightMotorEncoder.get();
 //    	distance = RobotMap.chassisGyro.getAngle();
     	System.out.println("encoder distance is : " + distance);

@@ -81,7 +81,7 @@ public class moveElevatorTele extends Command {
     		}	
     	}
     	
-    	RobotMap.elevatorliftMotor.set(getY);
+    	RobotMap.elevatorliftMotor.set(0.9 * getY);
     	
     }
 
