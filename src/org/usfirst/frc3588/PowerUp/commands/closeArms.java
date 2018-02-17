@@ -50,7 +50,7 @@ public class closeArms extends Command {
     // Called repeatedly when this Command is scheduled to run
     @Override
     protected void execute() {
-    	RobotMap.armshorizontalMotor.set(1.0);
+    	RobotMap.armshorizontalMotor.set(0.9);
     }
 
     // Make this return true when this Command no longer needs to run execute()
