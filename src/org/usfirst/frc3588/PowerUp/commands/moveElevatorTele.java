@@ -57,6 +57,7 @@ public class moveElevatorTele extends Command {
     	
     	
     	
+    	
     	getY = Robot.oi.controller.getY();
     	bottomLimit = RobotMap.elevatorLimitSwitchBottom.get();
     	topLimit = RobotMap.elevatorLimitSwitchTop.get();
@@ -64,24 +65,25 @@ public class moveElevatorTele extends Command {
     	if (getY > 0) {//This makes sure the negative value never exceed -0.5
     		getY *= 0.5;
     	}
-    	
+    	//*******changes below can be changed to match with limit switch is used
     	//System.out.println("topLimit is " + topLimit);
     	//System.out.println("bottomLimit is " + bottomLimit);
-    	if (topLimit == true && bottomLimit == true) { //if elevator is in middle of constraints, not all the way top or bottom
-    		RobotMap.elevatorliftMotor.set(getY);
-    	}else if (topLimit == false) { //if elevator is low enough to trip bottom limit switch. What is not fully at bottom of elevator?
-    		if (getY < -0.05) { //if thumbstick is moving down, elevator might not fully reach the bottom ever
-    			getY=0; //set speed to zero
+    	//if (topLimit == false && bottomLimit == true) { //if elevator is in middle of constraints, not all the way top or bottom
+    		//RobotMap.elevatorliftMotor.set(getY);
+    	//}else if (topLimit == true) { //i0f elevator is low enough to trip bottom limit switch. What is not fully at bottom of elevator?
+    		//if (getY < -0.05) { //if thumbstick is moving down, elevator might not fully reach the bottom ever
+    			//getY=0; //set speed to zero
     			//System.out.println("getY is NEGATIVE");
-    		}
-    	}else if (bottomLimit == false) { //if elevator is high enough to trip top limit switch. Might not fully reach top
-    		if (getY > 0.05) { //if thumb stick is moving up, elevator might not fully reach the top
-    			getY = 0; //set speed to zero
-    			//System.out.println("getY is POSITIVE");
-    		}	
-    	}
-    	
+    	//	}
+    	//}else if (bottomLimit == false) { //if elevator is high enough to trip top limit switch. Might not fully reach top
+//    		if (getY > 0.05) { //if thumb stick is moving up, elevator might not fully reach the top
+//    			getY = 0; //set speed to zero
+//    			System.out.println("getY is POSITIVE");
+//    		}	
+//    	}
+//    	System.out.println("bottom limit is " + RobotMap.elevatorLimitSwitchBottom );
     	RobotMap.elevatorliftMotor.set(0.9 * getY);
+    	
     	
     }
 

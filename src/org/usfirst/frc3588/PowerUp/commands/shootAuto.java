@@ -44,13 +44,20 @@ public class shootAuto extends Command {
     // Called just before this Command runs the first time
     @Override
     protected void initialize() {
-    	RobotMap.armswheelMotor.set(0.0);
+    	/**
+    	 * Right Side is Official Side
+    	 */
+    	RobotMap.armswheelMotorRight.set(0.0);
+    	RobotMap.armswheelMotorLeft.set(0.0);
+    	setTimeout(4);
     }
 
     // Called repeatedly when this Command is scheduled to run
     @Override
     protected void execute() {
-    	RobotMap.armswheelMotor.set(1.0);
+    	RobotMap.armswheelMotorRight.set(1.0);
+    	RobotMap.armswheelMotorLeft.set(-1.0);
+    	
     	Timer.delay(4.0);
     	check=true;
     }
@@ -64,7 +71,8 @@ public class shootAuto extends Command {
     // Called once after isFinished returns true
     @Override
     protected void end() {
-    	RobotMap.armswheelMotor.set(0.0);
+    	RobotMap.armswheelMotorRight.set(0.0);
+    	RobotMap.armswheelMotorLeft.set(0.0);
     }
 
     // Called when another command which requires one or more of the same

@@ -127,14 +127,11 @@ public class AutonomousCommand extends Command {
 //    			break AUTO_LOOP;
 //    		}
     	}
-    	else {
+    	else { 
     		System.out.println(pickAuto);
-    		//Command newTest = new newDriveStraight(0.5, 0, 300, false);// power time encoder distance
-    		Command newTest = new Pivot(90, 0.5);
-    			newTest.start();
-//    			if (newTest.isCompleted()) {
-//    				break AUTO_LOOP;
-//    			}
+    		//Command test = new newDriveStraight(0.6, 2.0, 50);
+    		Command test = new Pivot(-88);
+    		test.start();
     	}
     check = true;
     }

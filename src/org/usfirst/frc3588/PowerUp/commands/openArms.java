@@ -41,13 +41,21 @@ public class openArms extends Command {
     protected void initialize() {
     	check = false;
     	
-    	RobotMap.armshorizontalMotor.set(0.0);
+    	RobotMap.armshorizontalMotorRight.set(0.0);
+    	RobotMap.armshorizontalMotorLeft.set(0.0);
     }
 
     // Called repeatedly when this Command is scheduled to run
     @Override
     protected void execute() {
-    	RobotMap.armshorizontalMotor.set(-0.9);
+    	if (Robot.oi.controller.getRawButton(1)) {
+    		RobotMap.armshorizontalMotorRight.set(-0.5);
+    		RobotMap.armshorizontalMotorLeft.set(0.5);
+    	}
+    	else {
+    	RobotMap.armshorizontalMotorRight.set(-0.3);
+    	RobotMap.armshorizontalMotorLeft.set(0.3);
+    	}
     }
 
     // Make this return true when this Command no longer needs to run execute()
@@ -59,7 +67,8 @@ public class openArms extends Command {
     // Called once after isFinished returns true
     @Override
     protected void end() {
-    	RobotMap.armshorizontalMotor.set(0.0);
+    	RobotMap.armshorizontalMotorRight.set(0.0);
+    	RobotMap.armshorizontalMotorLeft.set(0.0);
     }
 
     // Called when another command which requires one or more of the same

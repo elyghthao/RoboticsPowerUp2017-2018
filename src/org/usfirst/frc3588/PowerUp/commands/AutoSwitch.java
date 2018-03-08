@@ -52,7 +52,7 @@ public class AutoSwitch extends CommandGroup {
     	}
     	
     	// moves robot from back wall to pivot if needed
-    	addSequential (new DriveStraight(0.5, 1.0, 2.0));
+    	addSequential (new newDriveStraight(0.5, 1.0, 300));
     	
     	// checks if robot is in middle position
     	if (robotPosition.charAt(0) == 'M') {
@@ -60,11 +60,11 @@ public class AutoSwitch extends CommandGroup {
     		// moves robot to same side as switch
     		if (switchPosition.charAt(0) == 'R') {
     			addSequential (new Pivot(90.0)); //turn right 90 degrees
-    			addSequential (new DriveStraight(0.7, 3.0, 5.0));
+    			addSequential (new newDriveStraight(0.7, 3.0, 5.0));
     			addSequential (new Pivot(-90.0)); //turn left 90 degrees
     		} else {	
     			addSequential (new Pivot(-90.0)); //turn left 90 degrees
-    			addSequential (new DriveStraight(0.7, 3.0, 5.0));
+    			addSequential (new newDriveStraight(0.7, 3.0, 5.0));
     			addSequential (new Pivot(90.0)); //turn right 90 degrees
     			
     		}
@@ -77,53 +77,53 @@ public class AutoSwitch extends CommandGroup {
     	
     	// checks if robot is on same side
     	if (sameSide) {
-    		addSequential (new DriveStraight(0.7, 2.0, 5.0));
+    		addSequential (new newDriveStraight(0.7, 2.0, 1200));
     		
     		if (switchPosition.charAt(0) == 'R') {
     			addSequential (new Pivot(-90.0)); //turn left 90 degrees
     		} else {
     			addSequential (new Pivot(90.0)); //turn right 90 degrees
     		}
-    		addSequential (new newDriveStraight(0.3, 0.0, 0.0));
+    		addSequential (new newDriveStraight(0.3, 0.0, 500));
     		
     	} else {
     		
     		if (switchPosition.charAt(0) == 'R') {
     			
-    			addSequential (new DriveStraight(0.7, 4.0, 9.0));
+    			addSequential (new newDriveStraight(0.7, 4.0, 1500));
     			addSequential (new Pivot(90.0)); //turn right 90 degrees
-    			addSequential (new DriveStraight(0.7, 4.0, 15.0));
+    			addSequential (new newDriveStraight(0.7, 4.0, 1200));
     			addSequential (new Pivot(90.0)); //turn right
-    			addSequential (new DriveStraight(0.7, 4.0, 15.0));
+    			addSequential (new newDriveStraight(0.7, 4.0, 300));
 
     			addSequential (new Pivot(90.0)); //turn right
-    			addSequential (new newDriveStraight(0.3, 0.0, 0.0));
+    			addSequential (new newDriveStraight(0.3, 0.0, 500));
 
-    			addSequential (new Pivot(90.0)); //turn right
-    			addSequential (new DriveStraight(0.3, 2.0, 2.0));
+//    			addSequential (new Pivot(90.0)); //turn right
+//    			addSequential (new newDriveStraight(0.3, 2.0, 2.0));
     		} else {
-    			addSequential (new DriveStraight(0.7, 4.0, 9.0));
+    			addSequential (new newDriveStraight(0.7, 4.0, 1500));
     			addSequential (new Pivot(-90.0)); //turn left
-    			addSequential (new DriveStraight(0.7, 4.0, 15.0));
+    			addSequential (new newDriveStraight(0.7, 4.0, 1200));
     			addSequential (new Pivot(-90.0)); //turn left
-    			addSequential (new DriveStraight(0.7, 4.0, 15.0));
+    			addSequential (new newDriveStraight(0.7, 4.0, 300));
 //<<<<<<< HEAD
     			addSequential (new Pivot(-90.0)); //turn left
-    			addSequential (new newDriveStraight(0.3, 0.0, 0.0));
+    			addSequential (new newDriveStraight(0.3, 0.0, 500));
 //=======
-    			addSequential (new Pivot(-90.0)); //turn left
-    			addSequential (new DriveStraight(0.3, 2.0, 2.0));
+//    			addSequential (new Pivot(-90.0)); //turn left
+//    			addSequential (new newDriveStraight(0.3, 2.0, 2.0));
 //>>>>>>> branch 'master' of https://github.com/frc-3588/PowerUp
     		}
     	}
     	//addSequential (new moveElevator(1));
      	addSequential (new moveElevatorAuto(0.5, 30));//power encoderDistance
-    	addSequential (new DriveStraight (0.5, 0.5, 1));
+    	addSequential (new newDriveStraight (0.5, 0.5, 1));
     	addSequential (new shootAuto(0.5));
-    	addSequential (new DriveStraight (-0.5, 0.5, 1));
+    	addSequential (new newDriveStraight (-0.5, 0.5, 1));
     	
     	addSequential (new moveElevatorAuto(-0.5, -30));//power encoderDistance
-    	addSequential (new DriveStraight(-0.5, 2.0, 2.0));
+    	addSequential (new newDriveStraight(-0.5, 2.0, 2.0));
     	
     } 
 }
