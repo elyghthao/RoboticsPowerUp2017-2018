@@ -83,8 +83,8 @@ public class moveElevatorTele extends Command {
 //    	}
 //    	System.out.println("bottom limit is " + RobotMap.elevatorLimitSwitchBottom );
     	RobotMap.elevatorliftMotor.set(0.9 * getY);
-    	
-    	
+    	double distance  = RobotMap.elevatorliftEncoder.get();
+    	System.out.println("lift encoder is " + distance);
     }
 
     // Make this return true when this Command no longer needs to run execute()

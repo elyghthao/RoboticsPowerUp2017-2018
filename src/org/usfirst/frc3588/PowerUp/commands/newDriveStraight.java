@@ -75,22 +75,22 @@ public class newDriveStraight extends Command {
     // Called repeatedly when this Command is scheduled to run
     @Override
     protected void execute() {
-    	gyroReading = RobotMap.chassisGyro.getAngle();
-    	if (gyroReading > ElyghsMagicalNumber) {
-    		RobotMap.chassisleftMotor.set(m_power);
-        	RobotMap.chassisrightMotor.set(m_power - 0.2);
-        	System.out.println("adjusting right");
-    		
-    	}else if (gyroReading < -ElyghsMagicalNumber) {
-    		
-    		RobotMap.chassisleftMotor.set(m_power - 0.2);
-        	RobotMap.chassisrightMotor.set(m_power);
-        	System.out.println("adjusting left");
-    	}else {
-    		RobotMap.chassisleftMotor.set(m_power);
-        	RobotMap.chassisrightMotor.set(m_power);
-    	}
-    	
+//    	gyroReading = RobotMap.chassisGyro.getAngle();
+//    	if (gyroReading > ElyghsMagicalNumber) {
+//    		RobotMap.chassisleftMotor.set(m_power);
+//        	RobotMap.chassisrightMotor.set(m_power - 0.2);
+//        	System.out.println("adjusting right");
+//    		
+//    	}else if (gyroReading < -ElyghsMagicalNumber) {
+//    		
+//    		RobotMap.chassisleftMotor.set(m_power - 0.2);
+//        	RobotMap.chassisrightMotor.set(m_power);
+//        	System.out.println("adjusting left");
+//    	}else {
+//    		RobotMap.chassisleftMotor.set(m_power);
+//        	RobotMap.chassisrightMotor.set(m_power);
+//    	}
+    	RobotMap.chassisrightMotor.set(m_power);
     	System.out.println("distance from newdrivestaight :" + Math.abs(RobotMap.chassisrightMotorEncoder.get()));
     	
     	
@@ -116,7 +116,7 @@ public class newDriveStraight extends Command {
     // Called once after isFinished returns true
     @Override
     protected void end() {
-    	
+    	System.out.println("Final encoder value: " + RobotMap.chassisrightMotorEncoder.get());
     	RobotMap.chassisleftMotor.set(RobotMap.STOP);
     	RobotMap.chassisrightMotor.set(RobotMap.STOP);
     }

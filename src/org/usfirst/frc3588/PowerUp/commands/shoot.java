@@ -41,15 +41,15 @@ public class shoot extends Command {
     	/*
     	 * Right Side is Official Side
     	 */
-    	RobotMap.armswheelMotorRight.set(0.0);
-    	RobotMap.armswheelMotorLeft.set(0.0);
+    	RobotMap.wheelsrightWheel.set(0.0);
+    	RobotMap.wheelsleftWheel.set(0.0);
     }
 
     // Called repeatedly when this Command is scheduled to run
     @Override
     protected void execute() {
-    	RobotMap.armswheelMotorRight.set(-0.8);
-    	RobotMap.armswheelMotorLeft.set(-0.8);
+    	RobotMap.wheelsrightWheel.set(-0.8);
+    	RobotMap.wheelsleftWheel.set(-0.8);
     }
 
     // Make this return true when this Command no longer needs to run execute()
@@ -62,8 +62,8 @@ public class shoot extends Command {
     // Called once after isFinished returns true
     @Override
     protected void end() {
-    	RobotMap.armswheelMotorRight.set(0.0);
-    	RobotMap.armswheelMotorLeft.set(0.0);
+    	RobotMap.wheelsrightWheel.set(0.0);
+    	RobotMap.wheelsleftWheel.set(0.0);
     }
 
     // Called when another command which requires one or more of the same

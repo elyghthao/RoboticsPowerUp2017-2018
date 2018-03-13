@@ -54,14 +54,21 @@ public class closeArms extends Command {
     // Called repeatedly when this Command is scheduled to run
     @Override
     protected void execute() {
-    	RobotMap.armshorizontalMotorRight.set(0.9);
-    	RobotMap.armshorizontalMotorLeft.set(-0.9);
+    	if (Robot.oi.controller.getRawButton(1)) {
+    		RobotMap.armshorizontalMotorRight.set(0.5);
+    		RobotMap.armshorizontalMotorLeft.set(-0.5);
+    	}
+    	else {
+    	RobotMap.armshorizontalMotorRight.set(0.3);
+    	RobotMap.armshorizontalMotorLeft.set(-0.3);
+    	}
     }
 
     // Make this return true when this Command no longer needs to run execute()
     @Override
     protected boolean isFinished() {
     	//if trigger is not held anymore
+    	
     	
     	return false;
         //else{ return false;}
