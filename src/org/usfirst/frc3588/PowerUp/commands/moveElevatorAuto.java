@@ -61,7 +61,7 @@ public class moveElevatorAuto extends Command {
     @Override
     protected void execute() {
     	
-    	RobotMap.elevatorliftMotor.set(-m_power);
+    	RobotMap.elevatorliftMotor.set(m_power);
     	System.out.println("elevator encoder from auto:" +RobotMap.elevatorliftEncoder.getRaw());
     	
     }
@@ -70,11 +70,11 @@ public class moveElevatorAuto extends Command {
     @Override
     protected boolean isFinished() {
     	
-    	if (m_encoderDistance > 0) {
-    		return RobotMap.elevatorliftEncoder.getRaw() >= m_encoderDistance;
-    	}else {
-    	return RobotMap.elevatorliftEncoder.getRaw() <= m_encoderDistance;
-    	}
+//    	if (m_encoderDistance > 0) {
+//    		return RobotMap.elevatorliftEncoder.getRaw() >= m_encoderDistance;
+//    	}else {
+    	return (Math.abs(RobotMap.elevatorliftEncoder.getRaw()) >= Math.abs(m_encoderDistance));
+    	
     	
     	
     }

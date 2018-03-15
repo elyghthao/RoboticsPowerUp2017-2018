@@ -55,7 +55,7 @@ public class shootAuto extends Command {
     // Called repeatedly when this Command is scheduled to run
     @Override
     protected void execute() {
-    	RobotMap.wheelsrightWheel.set(1.0);
+    	RobotMap.wheelsrightWheel.set(-1.0);
     	RobotMap.wheelsleftWheel.set(-1.0);
     	
     	Timer.delay(4.0);

@@ -84,6 +84,7 @@ public class AutonomousCommand extends Command {
 		
 		RobotMap.chassisleftMotor.set(RobotMap.STOP);
 		RobotMap.chassisrightMotor.set(RobotMap.STOP);
+		System.out.println("ddddddddddddddddddddddddddddddddddddddddddddddddd");
 
     }
 
@@ -136,9 +137,11 @@ public class AutonomousCommand extends Command {
 //    		}
     	}
     	else { 
-    		System.out.println(pickAuto);
-    		Command test = new newDriveStraight(0.3, 2.0, 30);
-    		//Command test = new Pivot(-88);
+    		System.out.println("pick auto: " + pickAuto);
+    		//Command test = new newDriveStraight(0.6, 2.0, 500);
+    		//Command test = new moveElevatorAuto(0.4, 4000);
+    		//Command test = new Pivot(-80);
+    		Command test = new holdCube();
     		test.start();
     	}
     check = true;

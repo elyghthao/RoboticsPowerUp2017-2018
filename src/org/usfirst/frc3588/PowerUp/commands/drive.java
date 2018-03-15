@@ -61,14 +61,16 @@ public class drive extends Command {
 //    	if (RobotMap.chassisGyro.getAngle()>=360 || RobotMap.chassisGyro.getAngle() <= -360) {
 //    		RobotMap.chassisGyro.reset();
 //    	}
+    	adjust = Robot.oi.rightJoystick.getRawAxis(3) * 0.9;
     	RobotMap.chassisleftMotor.set((Robot.oi.leftJoystick.getY()) * adjust);
     	RobotMap.chassisrightMotor.set(Robot.oi.rightJoystick.getY() * adjust);
-    	distance = -RobotMap.chassisrightMotorEncoder.get();
-    	//distance = RobotMap.chassisGyro.getAngle();
+    	//distance = -RobotMap.chassisrightMotorEncoder.get();
+    	distance = RobotMap.chassisGyro.getAngle();
     	//System.out.println("encoder distance is : " + distance);
     	//System.out.println( "Controller POV output is: " + Robot.oi.controller.getPOV());
     	//System.out.println("hi" + Robot.oi.controller.getRawAxis(1));
-    	System.out.println("rightMotorEncoder " + distance);
+    	//System.out.println("rightMotorEncoder " + distance);
+    	System.out.println("gyro : from tele" + distance);
     
     }
 

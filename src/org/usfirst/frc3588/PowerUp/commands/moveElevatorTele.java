@@ -43,6 +43,7 @@ public class moveElevatorTele extends Command {
     // Called just before this Command runs the first time
     @Override
     protected void initialize() {
+    	RobotMap.elevatorliftEncoder.reset();
     	RobotMap.elevatorliftMotor.set(0.0);
     	
     }

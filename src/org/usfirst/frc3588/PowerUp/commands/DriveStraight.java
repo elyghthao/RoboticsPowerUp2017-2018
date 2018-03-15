@@ -71,8 +71,8 @@ public class DriveStraight extends Command {
 	// Make this return true when this Command no longer needs to run execute()
 	@Override
 	protected boolean isFinished() {
-		if ((m_time > 0 && isTimedOut())
-				|| (m_distance > 0 && RobotMap.chassisrightMotorEncoder.getDistance() >= m_distance)) {
+		if (/*(m_time > 0 && isTimedOut())*/
+				(m_distance > 0 && -RobotMap.chassisrightMotorEncoder.getDistance() >= m_distance)) {
 			return true;
 		} else {
 			return false;
