@@ -44,12 +44,13 @@ public class climbingCommand extends Command {
     // Called repeatedly when this Command is scheduled to run
     @Override
     protected void execute() {
-    	if (Robot.oi.controller.getRawAxis(3) > -.2) {
-    		RobotMap.armsclimbingMotor.set(-0.3);
-    	}
-    	else if (Robot.oi.controller.getRawAxis(3) > .2) {
-    		RobotMap.armsclimbingMotor.set(0.3);
-    	}
+    	RobotMap.armsclimbingMotor.set(-0.7);
+//    	if (Robot.oi.controller.getRawAxis(3) > -.2) {
+//    		RobotMap.armsclimbingMotor.set(-0.3);
+//    	}
+//    	else if (Robot.oi.controller.getRawAxis(3) > .2) {
+//    		RobotMap.armsclimbingMotor.set(0.3);
+//    	}
     }
 
     // Make this return true when this Command no longer needs to run execute()

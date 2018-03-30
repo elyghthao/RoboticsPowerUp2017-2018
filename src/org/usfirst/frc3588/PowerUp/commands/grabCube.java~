@@ -48,9 +48,9 @@ public class grabCube extends Command {
     protected void execute() {
     		
     	
-    	RobotMap.armshorizontalMotorRight.set(0.7);
-		RobotMap.armshorizontalMotorLeft.set(-0.7);
-		setTimeout(1.0);
+    	RobotMap.armshorizontalMotorRight.set(1);
+		RobotMap.armshorizontalMotorLeft.set(-1);
+		setTimeout(2.3);
 		
     		
 		

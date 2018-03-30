@@ -53,16 +53,16 @@ public class newDriveStraight extends Command {
     // Called just before this Command runs the first time
     @Override
     protected void initialize() {
-    	if (m_power == RobotMap.STOP) {
-    		throw new IllegalArgumentException("Invalid power value " + Double.toString(m_power));
-    	}
+//    	if (m_power == RobotMap.STOP) {
+//    		throw new IllegalArgumentException("Invalid power value " + Double.toString(m_power));
+//    	}
     	if (m_time > 0) {
     		setTimeout(m_time);
     	}
-    	if (m_distance != 0) {
-    		//RobotMap.chassisleftMotorEncoder.reset();
-    		RobotMap.chassisrightMotorEncoder.reset();
-    	}
+//    	if (m_distance != 0) {
+//    		//RobotMap.chassisleftMotorEncoder.reset();
+//    		RobotMap.chassisrightMotorEncoder.reset();
+//    	}
     	RobotMap.chassisGyro.reset();
     	RobotMap.chassisrightMotorEncoder.reset();
     	if (m_distance < 0) {
@@ -91,7 +91,8 @@ public class newDriveStraight extends Command {
 //        	RobotMap.chassisrightMotor.set(m_power);
 //    	}
     	RobotMap.chassisrightMotor.set(m_power);
-    	System.out.println("distance from newdrivestaight :" + Math.abs(RobotMap.chassisrightMotorEncoder.get()));
+    	RobotMap.chassisleftMotor.set(m_power);
+    	//System.out.println("distance from newdrivestaight :" + Math.abs(RobotMap.chassisrightMotorEncoder.get()));
     	
     	
     	
@@ -104,10 +105,10 @@ public class newDriveStraight extends Command {
 //    	if (ultrasensor && RobotMap.chassisUltrasonic1.getRangeInches() < 5) {
 //    		return true;
 //    	}
-//    	else if ((m_time > 0 && isTimedOut())
-//				|| (m_distance > 0 && RobotMap.chassisrightMotorEncoder.getDistance() >= m_distance)) {
-//			return true;
-//		} 
+    	if ((isTimedOut())
+				|| (m_distance > 0 && RobotMap.chassisrightMotorEncoder.getDistance() >= m_distance)) {
+			return true;
+		} 
 //    	else {
 //			return false;
 //		}
