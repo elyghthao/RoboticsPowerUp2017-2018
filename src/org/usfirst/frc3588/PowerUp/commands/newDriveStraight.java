@@ -56,9 +56,9 @@ public class newDriveStraight extends Command {
 //    	if (m_power == RobotMap.STOP) {
 //    		throw new IllegalArgumentException("Invalid power value " + Double.toString(m_power));
 //    	}
-//    	if (m_time > 0) {
-//    		setTimeout(m_time);
-//    	}
+    	if (m_time > 0) {
+    		setTimeout(m_time);
+    	}
 //    	if (m_distance != 0) {
 //    		//RobotMap.chassisleftMotorEncoder.reset();
 //    		RobotMap.chassisrightMotorEncoder.reset();
@@ -105,10 +105,10 @@ public class newDriveStraight extends Command {
 //    	if (ultrasensor && RobotMap.chassisUltrasonic1.getRangeInches() < 5) {
 //    		return true;
 //    	}
-//    	else if ((m_time > 0 && isTimedOut())
-//				|| (m_distance > 0 && RobotMap.chassisrightMotorEncoder.getDistance() >= m_distance)) {
-//			return true;
-//		} 
+    	if ((isTimedOut())
+				|| (m_distance > 0 && RobotMap.chassisrightMotorEncoder.getDistance() >= m_distance)) {
+			return true;
+		} 
 //    	else {
 //			return false;
 //		}

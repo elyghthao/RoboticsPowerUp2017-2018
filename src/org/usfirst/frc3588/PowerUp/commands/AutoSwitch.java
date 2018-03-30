@@ -118,11 +118,13 @@ public class AutoSwitch extends CommandGroup {
     	}
     	//addSequential (new moveElevator(1));
      	addSequential (new moveElevatorAuto(0.5, 30));//power encoderDistance
+     	//addParallel (new moveElevatorAuto(0.5, 30));
     	addSequential (new newDriveStraight (0.5, 0.5, 1));
     	addSequential (new shootAuto(0.5));
     	addSequential (new newDriveStraight (-0.5, 0.5, 1));
     	
     	addSequential (new moveElevatorAuto(-0.5, -30));//power encoderDistance
+    	//addParallel (new moveElevatorAuto(-0.5, -30));
     	addSequential (new newDriveStraight(-0.5, 2.0, 2.0));
     	
     } 

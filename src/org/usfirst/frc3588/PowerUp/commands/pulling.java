@@ -49,7 +49,7 @@ public class pulling extends Command {
     // Called repeatedly when this Command is scheduled to run
     @Override
     protected void execute() {
-    	
+    	//These move the arms individually
     	while (Robot.oi.controller.getRawButton(2)) {
     		if (Robot.oi.controller.getPOV() == 90) {
     			RobotMap.armshorizontalMotorRight.set(-0.5);
@@ -70,18 +70,20 @@ public class pulling extends Command {
     		}
     	}
     	
+    	
+    	//This moves both arms
     	if ((Robot.oi.controller.getPOV() == 270) && (!Robot.oi.controller.getRawButton(2)) && (!Robot.oi.controller.getRawButton(3)) ) {
-        	RobotMap.wheelsleftWheel.set(0.8);
-        	RobotMap.wheelsrightWheel.set(0.8);	
+        	RobotMap.wheelsleftWheel.set(1.0);
+        	RobotMap.wheelsrightWheel.set(1.0);	
     	}
     	else if (Robot.oi.controller.getPOV() == 90  && (!Robot.oi.controller.getRawButton(2)) && (!Robot.oi.controller.getRawButton(3))) {
-    		RobotMap.wheelsleftWheel.set(-0.8);
-    		RobotMap.wheelsrightWheel.set(-0.8);
+    		RobotMap.wheelsleftWheel.set(-1.0);
+    		RobotMap.wheelsrightWheel.set(-1.0);
     	}else {
     		RobotMap.wheelsrightWheel.set(0.0);
         	RobotMap.wheelsleftWheel.set(0.0);
     	}
-    	System.out.println(Robot.oi.controller.getPOV());
+//    	System.out.println(Robot.oi.controller.getPOV());
     }
 
     // Make this return true when this Command no longer needs to run execute()

@@ -138,10 +138,11 @@ public class AutonomousCommand extends Command {
     	}
     	else { 
     		System.out.println("pick auto: " + pickAuto);
-    		//Command test = new newDriveStraight(0.6, 2.0, 500);
-    		//Command test = new moveElevatorAuto(0.4, 4000);
+//    		Command test = new DriveStraight(0.5, 3, 500);
     		//Command test = new Pivot(-80);
-    		Command test = new holdCube();
+//    		Command test = new moveElevatorAuto(0.7, 6600);//this works 3400 for help
+    		Command test = new holdLift();
+    		System.out.println("test command is now starting.... \n\n\n\n\n\n\n\n\n");
     		test.start();
     	}
     check = true;

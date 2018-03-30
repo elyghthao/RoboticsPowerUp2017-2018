@@ -54,7 +54,6 @@ public class moveElevatorAuto extends Command {
     		m_power *= -1;
     		
     	}
-    	RobotMap.elevatorSpike.set(Relay.Value.kOff);
     }
 
     // Called repeatedly when this Command is scheduled to run
@@ -84,7 +83,6 @@ public class moveElevatorAuto extends Command {
     @Override
     protected void end() {
     	RobotMap.elevatorliftMotor.set(RobotMap.STOP);
-    	RobotMap.elevatorSpike.set(Relay.Value.kOn);
     }
 
     // Called when another command which requires one or more of the same

@@ -49,7 +49,8 @@ public class shootAuto extends Command {
     	 */
     	RobotMap.wheelsrightWheel.set(0.0);
     	RobotMap.wheelsleftWheel.set(0.0);
-    	setTimeout(4);
+    	check = false;
+    	setTimeout(3);
     }
 
     // Called repeatedly when this Command is scheduled to run
@@ -58,8 +59,16 @@ public class shootAuto extends Command {
     	RobotMap.wheelsrightWheel.set(-1.0);
     	RobotMap.wheelsleftWheel.set(-1.0);
     	
-    	Timer.delay(4.0);
-    	check=true;
+    	RobotMap.armshorizontalMotorRight.set(-0.5);
+		RobotMap.armshorizontalMotorLeft.set(0.5);
+		
+    	Timer.delay(3.0);
+    	RobotMap.wheelsrightWheel.set(0.0);
+    	RobotMap.wheelsleftWheel.set(0.0);
+    	
+    	RobotMap.armshorizontalMotorRight.set(0.0);
+		RobotMap.armshorizontalMotorLeft.set(0.0);
+		check = true;
     }
 
     // Make this return true when this Command no longer needs to run execute()
@@ -73,6 +82,8 @@ public class shootAuto extends Command {
     protected void end() {
     	RobotMap.wheelsrightWheel.set(0.0);
     	RobotMap.wheelsleftWheel.set(0.0);
+    	RobotMap.armshorizontalMotorRight.set(0);
+		RobotMap.armshorizontalMotorLeft.set(0);
     }
 
     // Called when another command which requires one or more of the same

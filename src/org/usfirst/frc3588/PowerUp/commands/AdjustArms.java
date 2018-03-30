@@ -44,7 +44,7 @@ public class AdjustArms extends Command {
     // Called repeatedly when this Command is scheduled to run
     @Override
     protected void execute() {
-    	if (Robot.oi.controller.getRawButton(2)) {
+    	if (Robot.oi.controller.getRawButton(3)) {
     		if (Robot.oi.controller.getPOV() == 90) {
     			RobotMap.armshorizontalMotorRight.set(-0.2);
     		}
@@ -53,7 +53,7 @@ public class AdjustArms extends Command {
     			RobotMap.armshorizontalMotorRight.set(0.2);
     		}
     	}
-    	else if (Robot.oi.controller.getRawButton(3)) {
+    	else if (Robot.oi.controller.getRawButton(2)) {
     		if (Robot.oi.controller.getPOV() == 90) {
     			RobotMap.armshorizontalMotorLeft.set(-0.2);
     		}

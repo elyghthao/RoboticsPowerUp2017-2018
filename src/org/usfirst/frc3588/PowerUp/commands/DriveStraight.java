@@ -48,16 +48,17 @@ public class DriveStraight extends Command {
 	// Called just before this Command runs the first time
 	@Override
 	protected void initialize() throws IllegalArgumentException {
-		if (m_power == RobotMap.STOP) {
-			throw new IllegalArgumentException("Invalid power value " + Double.toString(m_power));
-		}
-		if (m_time > 0) {
-			setTimeout(m_time);
-		}
-		if (m_distance != 0) {
-			//RobotMap.chassisleftMotorEncoder.reset();
-			RobotMap.chassisrightMotorEncoder.reset();
-		}
+//		if (m_power == RobotMap.STOP) {
+//			throw new IllegalArgumentException("Invalid power value " + Double.toString(m_power));
+//		}
+//		if (m_time > 0) {
+//			setTimeout(m_time);
+//		}
+//		if (m_distance != 0) {
+//			//RobotMap.chassisleftMotorEncoder.reset();
+//			RobotMap.chassisrightMotorEncoder.reset();
+//		}
+		setTimeout(m_time);
 	}
 
 	// Called repeatedly when this Command is scheduled to run
@@ -65,26 +66,22 @@ public class DriveStraight extends Command {
 	protected void execute() {
 		RobotMap.chassisleftMotor.set(m_power * DL);
 		RobotMap.chassisrightMotor.set(m_power * DR);
-		System.out.println("encoder value from tele: " + RobotMap.chassisrightMotorEncoder.getDistance());
+	
+		//System.out.println("encoder value from tele: " + RobotMap.chassisrightMotorEncoder.getDistance());
 	}
 
 	// Make this return true when this Command no longer needs to run execute()
 	@Override
 	protected boolean isFinished() {
-		if (/*(m_time > 0 && isTimedOut())*/
-				(m_distance > 0 && -RobotMap.chassisrightMotorEncoder.getDistance() >= m_distance)) {
-			return true;
-		} else {
-			return false;
-		}
+		return (isTimedOut());
 	}
 
 	// Called once after isFinished returns true
 	@Override
 	protected void end() {
-		RobotMap.chassisleftMotor.set(0.1);
-		RobotMap.chassisrightMotor.set(0.1);
-		Timer.delay(0.05);
+//		RobotMap.chassisleftMotor.set(0.1);
+//		RobotMap.chassisrightMotor.set(0.1);
+//		Timer.delay(0.05);
 		RobotMap.chassisleftMotor.set(RobotMap.STOP);
 		RobotMap.chassisrightMotor.set(RobotMap.STOP);
 	}

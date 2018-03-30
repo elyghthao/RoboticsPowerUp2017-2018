@@ -48,8 +48,8 @@ public class shoot extends Command {
     // Called repeatedly when this Command is scheduled to run
     @Override
     protected void execute() {
-    	RobotMap.wheelsrightWheel.set(-0.8);
-    	RobotMap.wheelsleftWheel.set(-0.8);
+    	RobotMap.wheelsrightWheel.set(-1.0);
+    	RobotMap.wheelsleftWheel.set(-1.0);
     }
 
     // Make this return true when this Command no longer needs to run execute()

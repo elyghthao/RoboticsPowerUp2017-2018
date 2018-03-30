@@ -43,18 +43,20 @@ public class openArms extends Command {
     	
     	RobotMap.armshorizontalMotorRight.set(0.0);
     	RobotMap.armshorizontalMotorLeft.set(0.0);
+    	
     }
 
     // Called repeatedly when this Command is scheduled to run
     @Override
     protected void execute() {
+    	
     	if (Robot.oi.controller.getRawButton(1)) {
-    		RobotMap.armshorizontalMotorRight.set(-1);
-    		RobotMap.armshorizontalMotorLeft.set(1);
+    		RobotMap.armshorizontalMotorRight.set(-0.8);
+    		RobotMap.armshorizontalMotorLeft.set(0.8);
     	}
     	else {
-    	RobotMap.armshorizontalMotorRight.set(-0.2);
-    	RobotMap.armshorizontalMotorLeft.set(0.2);
+    	RobotMap.armshorizontalMotorRight.set(-0.3);
+    	RobotMap.armshorizontalMotorLeft.set(0.3);
     	}
     }
 
